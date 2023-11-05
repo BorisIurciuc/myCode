@@ -8,6 +8,15 @@ import java.util.Scanner;
  * */
 public class ArrayGroup {
 
+  public static void print(char[] ch, int length){
+
+    for (int i = 0; i < length; i++) {
+      System.out.print(ch[i] + "-");
+    }
+    System.out.println();
+
+  }
+
   public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in); // Scanner for text input has been announced
@@ -15,14 +24,19 @@ public class ArrayGroup {
     String str = scanner.nextLine();
 
     char[] ch = new char[str.length()];  // Convert a string to character array
+
     for (int i = 0; i < str.length(); i++) {
       ch[i] = str.charAt(i);
     }
     System.out.println("Array length " + str.length());
 
+
+
     int[] intText = new int[str.length()];// объявление массива чисел для кодов char (начальный)
 
     int length = intText.length;
+
+    print(ch, length);
     for (int i = 0; i < length; i++) {    //преобразование переменных полученного массива char в int
       intText[i] = ch[i];
     }
