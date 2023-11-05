@@ -2,23 +2,19 @@
 //Если таких букв несколько, вывести в алфавитном порядке.
 
 import java.util.Scanner;
-
 /**
  * 05/11/2023 myCode @author Boris Iurciuc (cohort36)
  * */
 public class ArrayGroup {
-
   public static void inputString(String str, char[] ch) {
-
     for (int i = 0; i < str.length(); i++) {
       ch[i] = str.charAt(i);
     }
     System.out.println("Array length " + str.length());
   }
 
-  public static void print(char[] ch, int length){
-
-    for (int i = 0; i < length; i++) {
+  public static void print(String str, char[] ch){
+    for (int i = 0; i < str.length(); i++) {
       System.out.print(ch[i] + "-");
     }
     System.out.println();
@@ -32,15 +28,11 @@ public class ArrayGroup {
 
     char[] ch = new char[str.length()];  // Convert a string to character array
 
-
     inputString(str, ch);
-
+    print(str, ch);
 
     int[] intText = new int[str.length()];// объявление массива чисел для кодов char (начальный)
-
     int length = intText.length;
-
-    print(ch, length);
 
     for (int i = 0; i < length; i++) {    //преобразование переменных полученного массива char в int
       intText[i] = ch[i];
