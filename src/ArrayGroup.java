@@ -57,5 +57,3 @@ public class ArrayGroup {
     System.out.println("Most common symbol '" + maxChar + "' with repetition count [" + max + "]");
   }
 }
-
-}
