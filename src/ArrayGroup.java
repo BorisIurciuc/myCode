@@ -32,30 +32,27 @@ public class ArrayGroup {
     }
   }
 
-  public static void group(String str, char[] ch) {
+  public static void maximum(String str, char[] ch) {
 
+    int[] sumCount = new int[str.length()];
     int count = 1;
     for (int i = 1; i < str.length(); i++) {
-
       if (ch[i - 1] == ch[i]) {
         count++;
-
-
+        sumCount[i] = count;
       } else {
         count = 1;
       }
-      System.out.println(ch[i] + "count" +  count);
     }
-
-  }
-
-  // adsadsasa}
-
-  public static void print(String str, char[] ch) {
-    for (int i = 0; i < str.length(); i++) {
-      System.out.print(ch[i] + " ");
+    int max = 0;
+    char maxCountChar = ' ';
+    for (int i = 1; i < str.length(); i++) {
+      if (max <= sumCount[i]){
+        max = sumCount[i];
+        maxCountChar = ch[i];
+      }
     }
-    System.out.println();
+    System.out.println("max " + max + " Char " + maxCountChar);
   }
 
   public static void main(String[] args) {
@@ -63,28 +60,10 @@ public class ArrayGroup {
     Scanner scanner = new Scanner(System.in); // Scanner for text input has been announced
     System.out.print("Input string variable - ");
     String str = scanner.nextLine();
-
-    char[] ch = new char[str.length()];  // Convert a string to character array
+    char[] ch = new char[str.length()];
 
     inputString(str, ch);
-    print(str, ch);
     sort(str, ch);
-    print(str, ch);
-    group(str, ch);
-
+    maximum(str, ch);
   }
 }
-
-// поиск символа с максимальным количеством повторов
-//    int max = 0;                          // начальное значение счетчика максимума повторов
-//    int maxCounter = 0;                   // Численное значение буквы или символа для макс. повторов
-//
-//    for (int j = 1; j < str.length(); j++) {
-//      if (max <= count[j]) {
-//        max = count[j];
-//        maxCounter = intGroupText[j];
-//      }
-//    }
-//    char maxChar = (char) maxCounter;    // перевод численного значение буквы или символа в тип char
-//
-//    System.out.println("Most common symbol '" + maxChar + "' with repetition count [" + max + "]");
