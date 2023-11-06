@@ -2,10 +2,12 @@
 //Если таких букв несколько, вывести в алфавитном порядке.
 
 import java.util.Scanner;
+
 /**
  * 05/11/2023 myCode @author Boris Iurciuc (cohort36)
- * */
+ */
 public class ArrayGroup {
+
   public static void inputString(String str, char[] ch) {
     for (int i = 0; i < str.length(); i++) {
       ch[i] = str.charAt(i);
@@ -30,14 +32,33 @@ public class ArrayGroup {
     }
   }
 
-  public static void print(String str, char[] ch){
+  public static void group(String str, char[] ch) {
+
+    int count = 1;
+    for (int i = 1; i < str.length(); i++) {
+
+      if (ch[i - 1] == ch[i]) {
+        count++;
+
+
+      } else {
+        count = 1;
+      }
+      System.out.println(ch[i] + "count" +  count);
+    }
+
+  }
+
+  // adsadsasa}
+
+  public static void print(String str, char[] ch) {
     for (int i = 0; i < str.length(); i++) {
       System.out.print(ch[i] + " ");
     }
     System.out.println();
   }
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in); // Scanner for text input has been announced
     System.out.print("Input string variable - ");
@@ -49,20 +70,11 @@ public class ArrayGroup {
     print(str, ch);
     sort(str, ch);
     print(str, ch);
-
-
-
-
-
-
-
-
-
-
-
+    group(str, ch);
 
   }
 }
+
 // поиск символа с максимальным количеством повторов
 //    int max = 0;                          // начальное значение счетчика максимума повторов
 //    int maxCounter = 0;                   // Численное значение буквы или символа для макс. повторов
