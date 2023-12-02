@@ -7,30 +7,22 @@ import java.util.Scanner;
  */
 public class Main {
 
+  public static void print(String n, String m, double v){
+    System.out.println(" name: " + n + ",\n material: " + m + ",\n volume: " + v);
+  }
+
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    Deposit[] deposit = new Deposit[3];
+    Deposit deposit = new Deposit();
+    deposit.setNameDeposit("aaa");
+    deposit.setMaterial(Rock.values()[1].getRock() );
+    deposit.setVolume(100);
 
-    for (int i = 0; i < 3; i++) {
-      deposit[i] = new Deposit();
-    }
-    System.out.println("input volume: ");
+    String n = deposit.getNameDeposit();
+    String m = deposit.getMaterial();
+    double v = deposit.getVolume();
 
-    for (int i = 0; i < 3; i++) {
-      System.out.print("d [" + i + "] ");
-      deposit[i] = new Deposit(scanner.nextDouble());
-    }
-
-    deposit[0].setNameDeposit("aaa");
-    deposit[1].setNameDeposit("bbb");
-    deposit[2].setNameDeposit("ccc");
-    deposit[0].setRock("r1");
-    deposit[1].setRock("r2");
-    deposit[2].setRock("r3");
-    for (int i = 0; i < 3; i++) {
-      System.out.println(deposit[i].getNameDeposit() + " " + deposit[i].getRock() + " " +
-          deposit[i].getVolume());
-    }
+    print(n, m, v);
   }
 }

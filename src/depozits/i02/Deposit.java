@@ -5,30 +5,29 @@ package depozits.i02;
  */
 public class Deposit {
   private String name;
-  private String rock;
+  private String material;
   private double volume;
+
 
   public Deposit() {
     this.name = " ";
-    this.rock = " ";
+    this.material = "rock";
     this.volume = 0;
   }
 
   public Deposit(double volume) {
    this.volume = volume;
+
   }
 
-
-
   public String getNameDeposit() {return name;  }
-
-  public String getRock() {     return rock;   }
 
   public void setNameDeposit(String name) {
     this.name = name;
   }
 
-  public void setRock(String rock) {   this.rock = rock;   }
+  public void setMaterial(String material) { this.material = material;  }
+  public String getMaterial() { return material; }
 
   public double getVolume() {
     return volume;
