@@ -6,19 +6,23 @@ package depozits.i02;
 public class Deposit {
   private String name;
   private String material;
-  private double volume;
+  private double volumeStart;
+  private double volumeEnd;
+
+  private double extras;
 
 
   public Deposit() {
     this.name = " ";
     this.material = "rock";
-    this.volume = 0;
+    this.volumeStart = 0;
+    this.extras = 0;
   }
 
-  public Deposit(double volume) {
-   this.volume = volume;
-
-  }
+//  public Deposit(double volume) {
+//   this.volume = volume;
+//
+//  }
 
   public String getNameDeposit() {return name;  }
 
@@ -30,10 +34,18 @@ public class Deposit {
   public String getMaterial() { return material; }
 
   public double getVolume() {
-    return volume;
+    return volumeStart;
   }
 
-  public void setVolume(double volume) {
-    this.volume = volume;
+  public void setVolume(double volumeStart) {
+    this.volumeStart = volumeStart;
   }
+
+  public void setExtras(double extras) {  this.extras = extras;  }
+  public double getExtras() { return extras; }
+
+  public double extrasVolume() {
+    return getVolume() - getExtras();
+  }
+
 }
