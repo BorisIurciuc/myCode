@@ -1,4 +1,4 @@
-package homework35;
+package homework35.test01;
 
 /**
  * 30/11/2023 myCode * @author Boris Iurciuc (cohort36)
@@ -6,17 +6,18 @@ package homework35;
 public class LightBulb {
 
   private String barCode;
-  private String manufacturer;
-  private int brightness;
-  private int power;        //+
-  private boolean rgb;
+  private final String manufacturer;
+  private final int brightness;
+  private final int power;        //+
+  private final boolean rgb;
   private double price;
 
-  public LightBulb(String barCode, String manufacturer, int brightness, int power, boolean rgb, double price) {
+  public LightBulb(String barCode, String manufacturer, int brightness, int power, boolean rgb,
+      double price) {
     this.barCode = barCode;
     this.manufacturer = manufacturer;
     this.brightness = brightness;
-
+    this.power = power;
     this.rgb = rgb;
     this.price = price;
   }
@@ -53,5 +54,3 @@ public class LightBulb {
     return rgb;
   }
 }
-
-
