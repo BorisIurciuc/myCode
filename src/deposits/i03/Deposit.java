@@ -12,9 +12,10 @@ public class Deposit {
   private String status;
 
 
+
   public Deposit() {}
 
-  public Deposit(String name, String material, double volumeStart, int[] coordinate, double extras,
+  public Deposit(String name, String material, double volumeStart, int[] coordinate,double extras,
       String status) {
     this.name = name;
     this.material = material;
@@ -23,7 +24,6 @@ public class Deposit {
     this.extras = extras;
     this.status = status;
   }
-
   public void setNameDeposit(String name) {   this.name = name; }
   public String getNameDeposit() {   return name; }
 
@@ -36,12 +36,10 @@ public class Deposit {
   public double getVolume() {
     return volumeStart;
   }
-
   public void setExtras(double extras) {  this.extras = extras;  }
   public double getExtras() { return extras; }
 
   public void setCoordinate(int[] coordinate) {
-
     this.coordinate = coordinate;
   }
   public int[] getCoordinate() {
@@ -52,24 +50,18 @@ public class Deposit {
     }
     return coordinate;
   }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
+  public void setStatus(String status) {    this.status = status;  }
+  public String getStatus() {  return status;  }
 
   public double volumeEnd() {
     switch (getStatus()) {
-      case "A":
+      case "develop":
         return getVolume() - getExtras();
-      case "B":
-      case "C":
+      case "prepare":
+      case "conserve":
         return getVolume();
     }
-    return 0;
+    return getVolume();
   }
 
   public void printDeposit() {
@@ -79,3 +71,4 @@ public class Deposit {
     System.out.println();
   }
 }
+
