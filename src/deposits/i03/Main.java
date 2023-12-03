@@ -11,21 +11,22 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    int statusDevelop = 0;
+
 
     Deposit[] deposit = new Deposit[3];
 
     for (int i = 0; i < 3; i++) {
       System.out.print("input extraction: ");
-      deposit[i] = new Deposit("aaa", Rock.values()[statusDevelop].getRock(), 100,
-          new int[] {1, 8}, scanner.nextDouble());
+      deposit[i] = new Deposit("aaa", Rock.values()[0].getRock(), 100,
+          new int[] {1, 8}, scanner.nextDouble(), scanner.nextLine());
+      scanner.nextLine();
     }
-    StatusEnum statusEnum = StatusEnum.values()[statusDevelop];
+
     //вывод данных
-    System.out.println("Статус: " + StatusEnum.values()[0].getStatus());
+
     for (int i = 0; i < 3; i++) {
       System.out.println();
-      deposit[i].printDeposit(statusEnum);
+      deposit[i].printDeposit();
       System.out.println("angle point: " + Arrays.toString(deposit[i].getCoordinate()));
     }
   }

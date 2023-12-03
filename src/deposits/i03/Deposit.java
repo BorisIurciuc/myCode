@@ -9,16 +9,19 @@ public class Deposit {
   private double volumeStart;
   int[] coordinate = new int[2];
   private double extras;
+  private String status;
 
 
   public Deposit() {}
 
-  public Deposit(String name, String material, double volumeStart, int[] coordinate, double extras){
+  public Deposit(String name, String material, double volumeStart, int[] coordinate, double extras,
+      String status) {
     this.name = name;
     this.material = material;
     this.volumeStart = volumeStart;
     this.coordinate = coordinate;
     this.extras = extras;
+    this.status = status;
   }
 
   public void setNameDeposit(String name) {   this.name = name; }
@@ -50,19 +53,29 @@ public class Deposit {
     return coordinate;
   }
 
-  public double volumeEnd(StatusEnum statusEnum) {
-    switch (statusEnum) {
-      case DEVELOP:
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public double volumeEnd() {
+    switch (getStatus()) {
+      case "A":
         return getVolume() - getExtras();
-      case PREPARE:
-      case CONSERVE:
+      case "B":
+      case "C":
         return getVolume();
     }
     return 0;
   }
-  public void printDeposit(StatusEnum statusEnum) {
-    System.out.println("name: " + getNameDeposit() + ",\nmaterial: " + getMaterial()
+
+  public void printDeposit() {
+    System.out.print("name: " + getNameDeposit() + ",\nmaterial: " + getMaterial()
         + ",\nvolumeStart: " + getVolume() + ",\nextras: "
-        + getExtras() + ",\nvolumeEnd: " + volumeEnd(statusEnum));
+        + getExtras() + ",\nvolumeEnd: " + volumeEnd() + "\nstatus: " + getStatus());
+    System.out.println();
   }
 }
