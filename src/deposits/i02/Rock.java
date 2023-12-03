@@ -1,4 +1,4 @@
-package depozits.i02;
+package deposits.i02;
 
 public enum Rock {
   SAND("sand"),

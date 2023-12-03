@@ -1,4 +1,4 @@
-package depozits.i02;
+package deposits.i02;
 
 public enum Status {
 
@@ -8,5 +8,9 @@ public enum Status {
   private final String status;
   Status(String status){
     this.status = status;
+  }
+
+  public String getStatus() {
+    return status;
   }
 }
