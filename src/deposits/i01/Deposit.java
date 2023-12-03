@@ -1,4 +1,4 @@
-package depozits.i01;
+package deposits.i01;
 
 /**
  * 20/11/2023 myCode * @author Boris Iurciuc (cohort36)

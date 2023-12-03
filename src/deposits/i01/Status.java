@@ -1,4 +1,4 @@
-package depozits.i01;
+package deposits.i01;
 
 public enum Status {
 
