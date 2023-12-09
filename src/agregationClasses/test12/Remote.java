@@ -6,8 +6,7 @@ package agregationClasses.test12;
 public class Remote {
 
   private int frequencyRemote;
-  int canal;
-  TV tv;
+   TV tv;
 
   public Remote(int frequencyRemote, TV tv) {
     this.frequencyRemote = frequencyRemote;
@@ -21,7 +20,6 @@ public class Remote {
   public boolean check() {
     return getFrequencyRemote() == tv.getFrequencyTv();
   }
-
   public void nrCanal(int canal) {
     if (!check()) {
       return;
@@ -29,4 +27,11 @@ public class Remote {
       tv.setCanalTV(canal);
     }
   }
+  public void up(){
+    tv.upTV();
+  }
+  public void down(){
+    tv.downTV();
+  }
+
 }

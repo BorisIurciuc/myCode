@@ -7,10 +7,12 @@ public class TV {
 
   private int frequencyTv;
   private int canalTV;
+  private int maxCanal;
 
-  public TV(int frequencyTv, int canalTV) {
+  public TV(int frequencyTv, int canalTV, int maxCanal) {
     this.frequencyTv = frequencyTv;
     this.canalTV = canalTV;
+    this.maxCanal = maxCanal;
   }
 
   public int getFrequencyTv() {
