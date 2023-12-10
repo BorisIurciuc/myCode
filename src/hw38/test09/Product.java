@@ -1,10 +1,5 @@
-package hw38.test03;
+package hw38.test09;
 
-/**
- * 09/12/2023 myCode
- *
- * @author Boris Iurciuc (cohort36)
- */
 public class Product {
   private String name;
   private int quantity;
@@ -32,8 +27,9 @@ public class Product {
     return quantity;
   }
 
-  public void setQuantity(int quantity) {
-    this.quantity = Math.max(quantity, 0);
+  public void setQuantityP(int quantity) {
+    this.quantity = quantity;
+        //Math.max(quantity, 0);
   }
 
   public double getPrice() {

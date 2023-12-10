@@ -1,10 +1,5 @@
-package hw38.test03;
+package hw38.test09;
 
-/**
- * 09/12/2023 myCode
- *
- * @author Boris Iurciuc (cohort36)
- */
 public class Person {
   private String name;
 

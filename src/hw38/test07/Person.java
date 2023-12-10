@@ -1,10 +1,5 @@
-//package hw38.test01;
+//package hw38.test07;
 //
-///**
-// * 09/12/2023 myCode
-// *
-// * @author Boris Iurciuc (cohort36)
-// */
 //public class Person {
 //  private String name;
 //

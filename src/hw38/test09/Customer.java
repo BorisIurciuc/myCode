@@ -1,47 +1,41 @@
-package hw38.test04;
+package hw38.test09;
 
-import hw38.test03.Person;
-
-/**
- * 09/12/2023 myCode * @author Boris Iurciuc (cohort36)
- */
 public class Customer extends Person {
   private double money;
   private String productName;
   private int quantity;
-
-  Seller seller;
-
+  private double pay;
 
   public Customer(String name, double money) {
     super(name);
     this.money = money;
   }
 
-  public Customer(String name, Seller seller) {
-    super(name);
-    this.seller = seller;
+  public double getPay() {
+    return pay;
   }
-
+  public void setPay(Seller seller) {
+    this.pay = seller.getPrice();
+  }
 
   @Override
   public String getName() {
     return super.getName();
   }
 
+
   public double getMoney() {
     return money;
   }
+
 
   public void print(){
     System.out.println("Покупатель " + getName() + " имеет " + getMoney());
   }
 
-
   public void setProductName(String productName, int quantity) {
     this.productName = productName;
     this.quantity = quantity;
-
   }
 
   public String getProductName() {
@@ -55,17 +49,29 @@ public class Customer extends Person {
     return quantity;
   }
 
-
   public void sayProductName() {
-    System.out.println("я хочу " + getProductName()  + " "
-        + getQuantity());
+    System.out.println("Покупатель: я хочу " + getProductName()  + " в количестве "
+        + getQuantity() + " штук");
   }
 
-
   double price;
-  public double buyProduct(Seller seller, String productName, int amount) {
-    double price = seller.getPrice(productName, amount);
+  public double buyProduct(Seller seller) {
+    double price = seller.getPrice();
+    System.out.println("seller.getPrice() " + seller.getPrice());
+
     return price;
+  }
+  public void printMoneyCustomer(Seller seller) {
+    if (seller.getPrice() <= getMoney()){
+
+      this.money = getMoney() - getPay();
+
+      System.out.println(
+          "Покупатель заплатил " + seller.getPrice() + " на счету осталось " + money);
+    } else {
+      System.out.println("Извините нет денег");
+    }
+
   }
 
 public void printBuyProduct() {
