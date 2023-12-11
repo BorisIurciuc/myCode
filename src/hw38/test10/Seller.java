@@ -1,4 +1,4 @@
-//package hw38.test09;
+//package hw38.test10;
 //
 ///**
 // * 09/12/2023 myCode * @author Boris Iurciuc (cohort36)
@@ -8,7 +8,7 @@
 //  private double money;
 //  private final Product[] products;
 //  private final int n;
-//  private int count;
+//  private int index;
 //  private int amount;
 //  private String productName;
 //
@@ -17,7 +17,7 @@
 //    this.n = n;
 //    this.money = money;
 //    products = new Product[n];
-//    count = 0;
+//    index = 0;
 //  }
 //
 //  public double getMoney() {
@@ -28,9 +28,9 @@
 //  }
 //
 //  public void addProducts(Product product) {
-//    if (count < n) {
-//      products[count] = product;
-//      count++;
+//    if (index < n) {
+//      products[index] = product;
+//      index++;
 //    } else {
 //      System.out.println("noo more");
 //    }
@@ -62,22 +62,25 @@
 //
 //  public int findProducts() {
 //    for (int i = 0; i < n; i++) {
-//      if (getProductName().equals(products[i].getName()) && getAmount() <= products[i].getQuantity()) {
-//        count = i;
-//        break;
+//      if (getProductName().equals(products[i].getName())) {
+//        if (getAmount() <= products[i].getQuantity()) {
+//          return i; // Return the index of the found product
+//        } else {
+//          System.out.println("Недостаточное количество товара в наличии");
+//          return -1; // Indicate insufficient quantity
+//        }
 //      }
 //    }
-//    return count;
+//    System.out.println("Товара нет в наличии");
+//    return -1; // Indicate that the product is not found
 //  }
 //
+//
 //  public double getPrice() {
-//    double price = 0;
 //    int count = findProducts();
-//    for (int i = 0; i < n; i++) {
-//      if (i == 1) {
-//        price = products[count].getPrice() * getAmount();
-//        break;
-//      }
+//    double price = 0;
+//    if (count != -1) {
+//      price = products[count].getPrice() * getAmount();
 //    }
 //    return price;
 //  }
@@ -87,15 +90,20 @@
 //  }
 //
 //  public void saySeller(){
-//    System.out.println("Продавец: продукт " + products[findProducts()].getName()
-//        + " стоит по " + products[findProducts()].getPrice() + " Евро за единицу"
-//    + ", стоимость покупки " + getPrice() + " Euro ");
+//    int count = findProducts();
+//    if (count != -1) {
+//      System.out.println("Продавец: продукт " + products[findProducts()].getName()
+//          + " стоит по " + products[findProducts()].getPrice() + " Евро за единицу"
+//          + ", стоимость покупки " + getPrice() + " Euro ");
+//    }
 //  }
 //
 //  public void currentProductQuantity(int amount) {
 //    int count = findProducts();
-//    products[count].setQuantityP( products[count].getQuantity() - amount);
-//    System.out.println("осталось на складе " + products[count].getQuantity() + " шт "
-//        + products[count].getName());
+//      if (count != -1) {
+//        products[count].setQuantityP(products[count].getQuantity() - amount);
+//        System.out.println("осталось на складе " + products[count].getQuantity() + " шт "
+//            + products[count].getName());
+//      }
 //  }
 //}

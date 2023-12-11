@@ -1,4 +1,4 @@
-//package hw38.test07;
+//package hw38.test10;
 //
 //public class Person {
 //  private String name;

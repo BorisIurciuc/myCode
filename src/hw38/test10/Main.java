@@ -1,4 +1,4 @@
-//package hw38.test09;
+//package hw38.test10;
 //
 ///**
 // * 09/12/2023 myCode * @author Boris Iurciuc (cohort36)
