@@ -1,4 +1,4 @@
-package interfaceMy;
+package interfaceMy.task01;
 
 class Square implements Drawable {
   @Override

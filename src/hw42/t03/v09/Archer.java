@@ -28,11 +28,14 @@ public class Archer extends Player implements Attackable {
   public int getAttackPower() {
     return attackPower = (random.nextInt(100) < 20) ? attackPower * 2 : attackPower;
   }
-
   @Override
   public void setAttackPower(int attackPower) {
     super.setAttackPower(attackPower);
   }
+
+  public int printAttackPower() {
+    return attackPower;
+  } //вывод на консоль силы атаки
 
   @Override
   public boolean isAlive() {
@@ -69,12 +72,12 @@ public class Archer extends Player implements Attackable {
     target.takeDamage(attackPower);
   }
 
-  @Override
+  int damage; // переменная урон, как результат силы атаки и уровня защиты
   public void takeDamage(int attackPower) {
-    health  = (random.nextInt(100) > 25) ? health - attackPower : health;
+    damage = (random.nextInt(100) < 25) ? 0 : attackPower;
+    health -= damage;
   }
   public int getDamage() {
-    return attackPower;
+    return damage;
   }
-
 }

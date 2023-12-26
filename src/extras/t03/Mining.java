@@ -1,31 +1,24 @@
-package extras.t01;
-
-import extras.t02.Main;
-
-/**
- * 13/12/2023 myCode
- *
- * @author Boris Iurciuc (cohort36)
- */
-public class Mining extends Company{
+package extras.t03;
+public class Mining extends Company {
 
   private final String license;
   private Field field;
+
   public Mining(String name, String license) {
     super(name);
     this.license = license;
-    field = new Field("ss", 0, 0);
+    this.field = new Field("?", 0, 0);
   }
+
   public String getLicense() {
     return license;
   }
 
-  public double getMiningExtract(){
-    return field.getFieldExtract();
+  public double getMiningExtract() {
+    return field.getSumFieldExtract();
   }
 
   public void printMining() {
-    System.out.println("printMining() " + field.getFieldExtract());
+    System.out.println("License " + getLicense() + ", Mining extraction: " + getMiningExtract());
   }
-
 }

@@ -29,8 +29,12 @@ private double mana;
 
   @Override
   public int getAttackPower() {
-    return attackPower = (1 < getMana()) ? attackPower * 2 : 0;
+    return attackPower = (1 <= getMana()) ? attackPower * 2 : 0;
   }
+
+  public int printAttackPower() {
+    return attackPower;
+  } //вывод на консоль силы атаки
 
   @Override
   public void setAttackPower(int attackPower) {
@@ -72,10 +76,15 @@ private double mana;
     target.takeDamage(attackPower);
     mana --;
   }
-
+  int damage; // переменная урон, как результат силы атаки и уровня защиты
   @Override
   public void takeDamage(int attackPower) {
+    damage = attackPower;
     health -= attackPower;
     mana += 0.2;
   }
+  public int getDamage() {
+    return damage;
+  }
+
 }

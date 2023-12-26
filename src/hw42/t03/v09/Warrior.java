@@ -32,6 +32,19 @@ public class Warrior extends Player implements Attackable {
   }
 
   @Override
+  public int getAttackPower() {
+    return super.getAttackPower();
+  }
+
+  @Override
+  public void setAttackPower(int attackPower) {
+    super.setAttackPower(attackPower);
+  }
+
+  public int printAttackPower() {
+    return attackPower;
+  } //вывод на консоль силы атаки
+  @Override
   public boolean isAlive() {
     return super.isAlive();
   }
@@ -61,8 +74,13 @@ public class Warrior extends Player implements Attackable {
     target.takeDamage(attackPower);
   }
 
+  int damage; // переменная урон, как результат силы атаки и уровня защиты
   @Override
   public void takeDamage(int attackPower) {
-    health = health - (attackPower - armor / 2);
+    damage = attackPower - armor / 2;
+    health -= damage;
+  }
+  public int getDamage() {
+    return damage;
   }
 }

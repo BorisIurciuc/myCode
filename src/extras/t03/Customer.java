@@ -1,7 +1,7 @@
-package extras.t01;
+package extras.t03;
 
 public class Customer extends Company{
-  private String license;
+  protected String license;
   public Customer(String name) {
     super(name);
 
@@ -11,4 +11,6 @@ public class Customer extends Company{
   public String getName() {
     return super.getName();
   }
+
+
 }

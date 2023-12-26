@@ -1,41 +1,56 @@
-package hw42.t03.v09;
-
-/**
- * 16/12/2023 myCode * @author Boris Iurciuc (cohort36)
- */
-public class Main {
-
-  public static void main(String[] args) {
-
-    Mage mage = new Mage("Gandalf", 200, 40, 2.4);
-    Warrior warrior = new Warrior("Aragon", 100, 20, 60);
-    Archer archer = new Archer("Legolas", 100, 10);
-    Monster monster = new Monster("Sauron", 500, 50);
-
-    System.out.println("Лучник " + archer.getName() + " атакует монстра");
-    archer.attack(monster,archer.getAttackPower());
-    System.out.println("Монстр " + monster.getName() + " получил " + monster.getDamage()
-        + " урона " + "теперь его здоровье " + monster.getHealth());
-
-  }
-}
-
-//       System.out.println(mage);
-//       System.out.println(warrior);
-//       System.out.println(archer);
-//       System.out.println(monster);
+//package hw42.t03.v09;
 //
-//       // attack
-//       monster.attack(archer,monster.getAttackPower());  // монстр атакует лучника
-//       monster.attack(warrior,monster.getAttackPower()); // монстр атакует воина
-//       monster.attack(mage, monster.getAttackPower());   // монстр атакует воина
+///**
+// * 16/12/2023 myCode * @author Boris Iurciuc (cohort36)
+// */
+//public class Main {
 //
-//       archer.attack(monster,archer.getAttackPower());   // лучник атакует монстра
-//       warrior.attack(monster,warrior.getAttackPower()); // воин атакует монстра
-//       mage.attack(monster, mage.getAttackPower());      // маг атакует монстра
+//  public static void main(String[] args) {
 //
-//       System.out.println();
-//       System.out.println(monster);            // состояние монстра
-//       System.out.println(archer);             // состояние лучника
-//       System.out.println(warrior);            // состояние воина
-//       System.out.println(mage);               // состояние мага
+//    Mage mage = new Mage("Gandalf", 20, 10, 0.8);
+//    Warrior warrior = new Warrior("Aragon", 5, 2, 6);
+//    Archer archer = new Archer("Legolas", 5, 2);
+//    Monster monster = new Monster("Sauron", 50, 5);
+//
+//    // лучник атакует монстра
+//    archer.attack(monster, archer.getAttackPower());
+//    System.out.println("Лучник " + archer.getName() + " атакует монстра");
+//    System.out.println("Монстр " + monster.getName() + " получил " + monster.getDamage()
+//        + " урона " + "теперь его здоровье " + monster.getHealth());
+//
+//    // монстр атакует лучника
+//    monster.attack(archer, monster.getAttackPower());  // монстр атакует лучника
+//    if (archer.getDamage() == 0 ) {
+//      System.out.println("Лучник " + archer.getName() + " уклонился от атаки");
+//    } else {
+//      System.out.println("Лучник " + archer.getName() + " получил " + archer.getDamage()
+//          + " урона " + "теперь его здоровье " + archer.getHealth());
+//    }
+//
+//    // маг атакует монстра
+//    if (mage.getMana() < 1) {
+//      System.out.println("Маг " + mage.getName() + " не может атаковать у него закончилась мана "
+//          + mage.getMana());
+//    } else { mage.attack(monster, mage.getAttackPower());      // маг атакует монстра
+//      System.out.println("Маг " + mage.getName() + " атакует монстра " + monster.getName()
+//            + " с силой " + mage.printAttackPower());
+//      }
+//
+//    // монстр атакует мага
+//    monster.attack(mage, monster.getAttackPower());
+//    System.out.println("Монстр " + monster.getName() + " атакует мага " + mage.getName()
+//        + " с силой " + monster.printAttackPower());
+//    System.out.println("Маг " + mage.getName() + " получил " + mage.getDamage()
+//        + " урона " + "теперь его здоровье " + mage.getHealth() + " и мана "
+//        + mage.getMana());
+//
+//    // маг атакует монстра
+//    if (mage.getMana() < 1) {
+//      System.out.println("Маг " + mage.getName() + " не может атаковать у него закончилась мана "
+//          + mage.getMana());
+//    } else { mage.attack(monster, mage.getAttackPower());      // маг атакует монстра
+//      System.out.println("Маг " + mage.getName() + " атакует монстра " + monster.getName()
+//          + " с силой " + mage.printAttackPower());
+//    }
+//  }
+//}

@@ -1,7 +1,6 @@
-package extras.t01;
+package extras.t03;
 
-public class Company
-{
+public class Company{
   private String name;
 
 
@@ -16,5 +15,6 @@ public class Company
   public void setName(String name) {
     this.name = name;
   }
+
 
 }

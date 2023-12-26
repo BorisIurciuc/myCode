@@ -31,6 +31,9 @@ public class Monster extends Entity implements Attackable {
     super.setAttackPower(attackPower);
   }
 
+  public int printAttackPower() {
+    return attackPower;
+  } //вывод на консоль силы атаки
   @Override
   public boolean isAlive() {
     return super.isAlive();
@@ -55,7 +58,7 @@ public class Monster extends Entity implements Attackable {
   public void attack(Attackable target, int attackPower) {
     target.takeDamage(attackPower);
   }
-  int damage;
+  int damage; // переменная урон, как результат силы атаки и уровня защиты
   @Override
   public void takeDamage(int attackPower) {
     damage = attackPower;
