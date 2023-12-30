@@ -1,9 +1,19 @@
 package SpaceAdventures;
-public abstract class Obstacle extends GameObject{
-  public Obstacle(int remainingStrength) {
+
+public class SpaceShip extends GameObject implements Attacker{
+  private String name;
+  private int attackPower;
+  private int score;
+  public SpaceShip(int remainingStrength, String name, int attackPower) {
     super(remainingStrength);
+    this.name = name;
+    this.attackPower = attackPower;
+    this.score = 0;
   }
-  public abstract void encounter(); //описать абстрактный метод void encounter() - встретить/найти
+  @Override
+  public void attack(GameObject target) {
+
+  }
   @Override
   public int getRemainingStrength() {
     return super.getRemainingStrength();
@@ -25,16 +35,15 @@ public abstract class Obstacle extends GameObject{
     super.hurt(amount);
   }
   @Override
-  public boolean equals(Object o) {
-    return super.equals(o);
-  }
-  @Override
   public int hashCode() {
     return super.hashCode();
+  }
+  @Override
+  public boolean equals(Object obj) {
+    return super.equals(obj);
   }
   @Override
   public String toString() {
     return super.toString();
   }
 }
-

@@ -1,9 +1,16 @@
 package SpaceAdventures;
-public abstract class Obstacle extends GameObject{
-  public Obstacle(int remainingStrength) {
+public class Enemy extends Obstacle implements Attacker{
+  private int attackPower;
+  public Enemy(int remainingStrength, int attackPower) {
     super(remainingStrength);
+    this.attackPower = attackPower;
   }
-  public abstract void encounter(); //описать абстрактный метод void encounter() - встретить/найти
+  public int getAttackPower() {
+    return attackPower;
+  }
+  public void setAttackPower(int attackPower) {
+    this.attackPower = attackPower;
+  }
   @Override
   public int getRemainingStrength() {
     return super.getRemainingStrength();
@@ -12,6 +19,15 @@ public abstract class Obstacle extends GameObject{
   public void setRemainingStrength(int remainingStrength) {
     super.setRemainingStrength(remainingStrength);
   }
+  @Override
+  public void encounter() {
+    System.out.println("Сила атаки " + getAttackPower() + " прочность ");
+  }
+  @Override
+  public void attack(GameObject target) {
+
+  }
+
   @Override
   public boolean isAlive() {
     return super.isAlive();
@@ -37,4 +53,3 @@ public abstract class Obstacle extends GameObject{
     return super.toString();
   }
 }
-
