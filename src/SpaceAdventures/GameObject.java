@@ -1,4 +1,4 @@
-package SpaceAdventures.task01;
+package SpaceAdventures;
 
 /**
  * 30/12/2023 myCode * @author Boris Iurciuc (cohort36)

@@ -1,4 +1,4 @@
-package SpaceAdventures.task01;
+package SpaceAdventures;
 
 public interface Attacker {
   void attack(GameObject target);
