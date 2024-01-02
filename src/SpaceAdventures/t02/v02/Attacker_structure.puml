@@ -1,0 +1,194 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "SpaceAdventures.Attacker",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_2131648745 { 
+   	label=SpaceAdventures
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Asteroid2131648745[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Asteroid</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   value: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ destroy()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ encounter()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ extract(): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Attacker2131648745[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(I)Attacker</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attack(target: GameObject)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+Enemy2131648745[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Enemy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   attackPower: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attack(target: GameObject)</TD></TR>
+<TR><TD ALIGN="LEFT" ># destroy()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ encounter()</TD></TR>
+<TR><TD ALIGN="LEFT" ># hurt(amount: double)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GameObject2131648745[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GameObject</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   remainingStrength: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># destroy()</TD></TR>
+<TR><TD ALIGN="LEFT" ># hurt(amount: double)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Obstacle2131648745[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Obstacle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># destroy()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ encounter()</TD></TR>
+<TR><TD ALIGN="LEFT" ># hurt(amount: double)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SpaceShip2131648745[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SpaceShip</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   attackPower: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   score: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attack(target: GameObject)</TD></TR>
+<TR><TD ALIGN="LEFT" ># destroy()</TD></TR>
+<TR><TD ALIGN="LEFT" ># hurt(amount: double)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Attacker2131648745 -> Enemy2131648745[arrowhead=none, arrowtail=empty, dir=both];
+Attacker2131648745 -> SpaceShip2131648745[arrowhead=none, arrowtail=empty, dir=both];
+GameObject2131648745 -> Obstacle2131648745[arrowhead=none, arrowtail=empty, dir=both];
+GameObject2131648745 -> SpaceShip2131648745[arrowhead=none, arrowtail=empty, dir=both];
+Obstacle2131648745 -> Asteroid2131648745[arrowhead=none, arrowtail=empty, dir=both];
+Obstacle2131648745 -> Enemy2131648745[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

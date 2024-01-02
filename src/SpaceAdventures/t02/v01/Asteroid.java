@@ -1,8 +1,16 @@
-package SpaceAdventures;
-public class Asteroid extends Obstacle{
+package SpaceAdventures.t02.v01;
+
+public class Asteroid extends Obstacle {
   private int value;
   public Asteroid(int remainingStrength, int value) {
     super(remainingStrength);
+    this.value = value;
+  }
+
+  public int getValue() {
+    return value;
+  }
+  public void setValue(int value) {
     this.value = value;
   }
   public int extract(){
@@ -25,6 +33,6 @@ public class Asteroid extends Obstacle{
   }
   @Override
   public String toString() {
-    return super.toString();
+    return super.toString() + getValue();
   }
 }

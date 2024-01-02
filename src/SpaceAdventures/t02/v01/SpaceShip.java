@@ -1,28 +1,25 @@
-package SpaceAdventures;
+package SpaceAdventures.t02.v01;
 
-public class SpaceShip extends GameObject implements Attacker{
+public class SpaceShip extends GameObject implements Attacker {
   private String name;
-  private int attackPower;
+  private static int attackPower;
   private int score;
   public SpaceShip(int remainingStrength, String name, int attackPower) {
     super(remainingStrength);
     this.name = name;
-    this.attackPower = attackPower;
+    SpaceShip.attackPower = attackPower;
     this.score = 0;
   }
+
+  public static int getAttackPower() {
+    return attackPower;
+  }
+
   @Override
   public void attack(GameObject target) {
-
+    target.hurt(0);
   }
-  @Override
-  public int getRemainingStrength() {
-    return super.getRemainingStrength();
-  }
-  @Override
-  public void setRemainingStrength(int remainingStrength) {
-    super.setRemainingStrength(remainingStrength);
-  }
-  @Override
+   @Override
   public boolean isAlive() {
     return super.isAlive();
   }
@@ -32,7 +29,7 @@ public class SpaceShip extends GameObject implements Attacker{
   }
   @Override
   void hurt(double amount) {
-    super.hurt(amount);
+
   }
   @Override
   public int hashCode() {

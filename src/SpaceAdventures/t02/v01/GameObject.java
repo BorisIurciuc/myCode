@@ -1,4 +1,4 @@
-package SpaceAdventures;
+package SpaceAdventures.t02.v01;
 import java.util.Objects;
 
 /**
@@ -36,8 +36,6 @@ public abstract class GameObject {
   }
   @Override
   public String toString() {
-    return "GameObject{" +
-        "remainingStrength=" + remainingStrength +
-        '}';
+    return "remainingStrength= " + remainingStrength + " ";
   }
 }
