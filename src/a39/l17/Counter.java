@@ -1,4 +1,4 @@
-package a39.l18;
+package a39.l17;
 public class Counter {
   // Статическое поле для отслеживания количества экземпляров класса Counter
   private static int count = 0;

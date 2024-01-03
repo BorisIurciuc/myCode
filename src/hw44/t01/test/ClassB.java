@@ -23,8 +23,4 @@ public class ClassB extends ClassA{
     return a;
   }
 
-  @Override
-  public String toString() {
-    return super.toString();
-  }
 }

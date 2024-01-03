@@ -1,9 +1,7 @@
 package hw44.t01.test;
 
 /**
- * 22/12/2023 myCode
- *
- * @author Boris Iurciuc (cohort36)
+ * 22/12/2023 myCode * @author Boris Iurciuc (cohort36)
  */
 public class Main {
 
