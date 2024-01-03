@@ -1,10 +1,10 @@
 package a39.l19.polymorphism_phone.main_poly_phone;
-public class IPhoneSmartPhone extends BasicSmartPhone {
-  public IPhoneSmartPhone(int batteryCapacity, String generation) {
-    super(batteryCapacity, generation);
+public class IPhone extends SmartPhone {
+  public IPhone(int battery, String generation) {
+    super(battery, generation);
   }
   @Override
-  public void internetConnection() {
+  public void internet() {
     System.out.println("Safari internet connection");
   }
   @Override

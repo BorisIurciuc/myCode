@@ -1,4 +1,4 @@
-package a39.l19.polymorphism__phone;
+package a39.l19.polymorphism_phone;
 
 public class HuaweiSmartPhone extends BasicSmartPhone{
   public HuaweiSmartPhone(int batteryCapacity, double displayDiagonalInch, int storage, String generation) {

@@ -1,4 +1,4 @@
-package a39.l20;
+package a39.l20.coffe_machine;
 
 import java.time.LocalTime;
 import java.time.ZoneId;

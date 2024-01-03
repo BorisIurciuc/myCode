@@ -1,8 +1,6 @@
 package arrayObject.task05_Constr_Loop_fromMetod;
 
-import hw42.metodEquals.Entity;
-import java.util.Scanner;
-class Main {
+public class Pet {
 
   class Dog{
     private final String name;
@@ -18,14 +16,14 @@ class Main {
 
     Dog[] dogs = new Dog[3];
       for (int i = 0; i < 3; i++) {
-        dogs[i] = new Dog("aaa");
+        dogs[i] = new Dog("daaa");
       }
     return dogs;
 }
 
   public static void main(String[] args) {
-    Main main = new Main();
-    Dog[] dogs = main.getDogs();
+    Pet pet = new Pet();
+    Dog[] dogs = pet.getDogs();
 
     for (int i = 0; i < 3; i++) {
      System.out.println(dogs[i].getName());

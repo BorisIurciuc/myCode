@@ -1,4 +1,4 @@
-package a39.l18.inheritance.t;
+package a39.l18.main_inheritance;
 
 public class Mobile {
   public static void main(String[] args) {

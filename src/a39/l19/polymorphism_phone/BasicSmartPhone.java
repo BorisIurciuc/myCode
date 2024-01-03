@@ -1,14 +1,9 @@
-package a39.l19.polymorphism__phone;
-
+package a39.l19.polymorphism_phone;
 
 public class BasicSmartPhone {
   private int batteryCapacity;
-
   private double displayDiagonalInch;
-
-
   private int storage;
-
   private String generation;
 
   public BasicSmartPhone(int batteryCapacity, double displayDiagonalInch,  int storage, String generation) {
@@ -22,7 +17,6 @@ public class BasicSmartPhone {
   public void unlock(){
     System.out.println("Смартфон разблокирован");
   }
-
 
   public void internetConnection() {
     System.out.println("Установлена связь с интернетом");
